@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    font-family: 'Geneva', sans-serif;
+}
+
+body {
+    background-color: papayawhip;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    position: relative;
+}
+
+.header {
+    background-color: skyblue;
+    color: black;
+    font-weight: 800;
+    display: flex;
+}
+
+.header > div {
+    font-size: 2.5rem;
+    padding: 1rem;
+    padding-left: 5.8rem;
+}
+
+#book-logo {
+    height: 4rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem
+}
+
+.body {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3rem;
+}
+
+.form {
+    background-color: pink;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 8px 8px 0px black;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > .title {
+    background-color: palevioletred;
+}
+
+input[type="text"], select {
+    padding: 0.5rem;
+    /* border: 2px solid lightblue; */
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+}
+
+form > button {
+    font-size: 1rem;
+    align-self: center;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: palevioletred;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 800;
+}
+
+.list {
+    padding: 2rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    box-shadow: 8px 8px 0px black;
+    margin-right: 0.8rem;
+}
+
+.list > .title {
+    background-color: lightblue;
+}
