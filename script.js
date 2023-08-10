@@ -78,6 +78,4 @@ btn.addEventListener('click', function(e) {
 
 // display books in library //
 
-const tml = new Book('The Midnight Library', 'Matt Haig', 304, true);
-addBookToLibrary(tml);
 displayLibrary();
