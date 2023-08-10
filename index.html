@@ -26,11 +26,11 @@
                         <input type="text" id="author" />
                     </div>
                     <div class="question">
-                        <label for="page-count">Page Count</label>
+                        <label for="page-count">Pages</label>
                         <input type="text" id="page-count" />
                     </div>
                     <div class="question">
-                        <label for="is-read">Read Status</label>
+                        <label for="is-read">Read?</label>
                         <select name="is-read" id="is-read" form="book-form">
                             <option value="read">Read</option>
                             <option value="not-read">Not Read</option>
@@ -42,17 +42,23 @@
             <div class="list">
                 <div class="title">MY BOOKS</div>
                 <table>
+                    <colgroup>
+                        <col span="1" style="width: 40%">
+                        <col>
+                        <col span="1" style="min-width: 15%; width: 80px">
+                        <col span="1" style="min-width: 15%; width: 100px">
+                    </colgroup>
                     <tr>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Page Count</th>
+                        <th>Pages</th>
                         <th>Read?</th>
                     </tr>
                     <tr>
                         <td>The Midnight Library</td>
                         <td>Matt Haig</td>
                         <td>304</td>
-                        <td>Read</td>
+                        <td>Not Read</td>
                     </tr>
                 </table>
             </div>
