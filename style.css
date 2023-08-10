@@ -67,7 +67,7 @@ form > .title {
     background-color: palevioletred;
 }
 
-input[type="text"], select {
+input[type="text"], select, input[type="number"] {
     padding: 0.5rem;
     /* border: 2px solid lightblue; */
     border: none;
