@@ -123,3 +123,16 @@ th {
 .empty td {
     font-style: italic;
 }
+
+.remove {
+    padding: 0;
+}
+
+.remove-btn {
+    font-size: 0.8rem;
+    font-weight: 800;
+    border: none;
+    background-color: lightblue;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.3rem;
+}

@@ -7,6 +7,7 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#page-count');
 const isRead = document.querySelector('#is-read');
+const removeBtns = document.querySelectorAll('.remove-btn');
 
 
 // constructing book objects for the library //
@@ -48,6 +49,7 @@ function displayBook(book) {
     let author = row.insertCell(1);
     let pages = row.insertCell(2);
     let isRead = row.insertCell(3);
+    let remove = row.insertCell(4);
     title.innerHTML = book.title;
     author.innerHTML = book.author;
     pages.innerHTML = book.pages;
@@ -56,6 +58,11 @@ function displayBook(book) {
     } else {
         isRead.innerHTML = 'Not Read';
     }
+    remove.classList.add('remove');
+    let removeBtn = document.createElement('button');
+    removeBtn.innerHTML = 'CLICK';
+    removeBtn.classList.add('remove-btn');
+    remove.appendChild(removeBtn);
 }
 
 
@@ -80,6 +87,10 @@ btn.addEventListener('click', function(e) {
 });
 
 
-// display books in library //
 
-displayLibrary();
+// removing books from library //
+for (let button of removeBtns) {
+    button.addEventListener('click', function(e) {
+        //
+    });
+}
