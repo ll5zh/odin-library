@@ -102,3 +102,19 @@ form > button {
 .list > .title {
     background-color: lightblue;
 }
+
+table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid skyblue;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+th {
+    background-color: skyblue;
+}
