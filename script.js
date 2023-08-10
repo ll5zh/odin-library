@@ -70,6 +70,10 @@ btn.addEventListener('click', function(e) {
         if (isRead.value == 'not-read') {
             newBook.isRead = false;
         }
+        if (table.classList.contains('empty')) {
+            table.deleteRow(-1);
+            table.classList.remove('empty');
+        }
         addBookToLibrary(newBook);
         displayBook(newBook);
     }
