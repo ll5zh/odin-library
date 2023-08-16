@@ -7,12 +7,13 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#page-count');
 const isRead = document.querySelector('#is-read');
-const removeBtns = document.querySelectorAll('.remove-btn');
+const removeBtnNodes = document.querySelectorAll('.remove-btn');
 
 
 // constructing book objects for the library //
 
 let myLibrary = [];
+let removeBtns = [];
 
 function Book(title, author, pages, isRead) {
     this.title = title;
@@ -63,11 +64,19 @@ function displayBook(book) {
     removeBtn.innerHTML = 'CLICK';
     removeBtn.classList.add('remove-btn');
     remove.appendChild(removeBtn);
+    removeBtns.push(removeBtn);
+    let len = myLibrary.length;
+    removeBtn.addEventListener('click', function(e) {
+        removeBook(len - 1); // index is changing can't delete two in row
+    });
+}
+
+function removeBook(index) {
+    table.deleteRow(index + 1);
 }
 
 
 // adding books to library //
-
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 });
@@ -85,12 +94,3 @@ btn.addEventListener('click', function(e) {
         displayBook(newBook);
     }
 });
-
-
-
-// removing books from library //
-for (let button of removeBtns) {
-    button.addEventListener('click', function(e) {
-        //
-    });
-}
