@@ -44,7 +44,7 @@ function displayLibrary() {
     }
 }
 
-function displayBook(book) {
+function displayBook(book, index) {
     let row = table.insertRow(-1);
     let title = row.insertCell(0);
     let author = row.insertCell(1);
@@ -65,14 +65,22 @@ function displayBook(book) {
     removeBtn.classList.add('remove-btn');
     remove.appendChild(removeBtn);
     removeBtns.push(removeBtn);
-    let len = myLibrary.length;
+    console.log(index);
     removeBtn.addEventListener('click', function(e) {
-        removeBook(len - 1); // index is changing can't delete two in row
+        removeBook(index);
     });
 }
 
-function removeBook(index) {
-    table.deleteRow(index + 1);
+function removeBook(index) { // index = book's index in myLibrary
+    myLibrary.splice(index, 1); // delete object from array
+    // reformat table - delete, then re-add
+    while (table.rows.length > 1) {
+        table.deleteRow(-1);
+    }
+    let len = myLibrary.length;
+    for (let i = 0; i < len; ++i) {
+        displayBook(myLibrary[i], i);
+    }
 }
 
 
@@ -91,6 +99,6 @@ btn.addEventListener('click', function(e) {
             table.classList.remove('empty');
         }
         addBookToLibrary(newBook);
-        displayBook(newBook);
+        displayBook(newBook, myLibrary.length - 1);
     }
 });
