@@ -65,7 +65,6 @@ function displayBook(book, index) {
     removeBtn.classList.add('remove-btn');
     remove.appendChild(removeBtn);
     removeBtns.push(removeBtn);
-    console.log(index);
     removeBtn.addEventListener('click', function(e) {
         removeBook(index);
     });
@@ -80,6 +79,28 @@ function removeBook(index) { // index = book's index in myLibrary
     let len = myLibrary.length;
     for (let i = 0; i < len; ++i) {
         displayBook(myLibrary[i], i);
+    }
+    if (len == 0) {
+        table.classList.add('empty');
+        let row = table.insertRow(-1);
+        let title = row.insertCell(0);
+        let author = row.insertCell(1);
+        let pages = row.insertCell(2);
+        let isRead = row.insertCell(3);
+        let remove = row.insertCell(4);
+        title.innerHTML = 'Sample Title';
+        author.innerHTML = 'Sample Author';
+        pages.innerHTML = 100;
+        isRead.innerHTML = 'Read';
+        remove.classList.add('remove');
+        let removeBtn = document.createElement('button');
+        removeBtn.innerHTML = 'CLICK';
+        removeBtn.classList.add('remove-btn');
+        remove.appendChild(removeBtn);
+        removeBtns.push(removeBtn);
+        removeBtn.addEventListener('click', function(e) {
+            removeBook(index);
+        });
     }
 }
 
