@@ -37,9 +37,17 @@ function displayLibrary() {
         author.innerHTML = book.author;
         pages.innerHTML = book.pages;
         if (book.isRead) {
-            isRead.innerHTML = 'Read';
+            isRead.innerHTML = 
+            `<label class="toggle">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>`;
         } else {
-            isRead.innerHTML = 'Not Read';
+            isRead.innerHTML = 
+            `<label class="toggle">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>`;
         }
     }
 }
@@ -55,9 +63,17 @@ function displayBook(book, index) {
     author.innerHTML = book.author;
     pages.innerHTML = book.pages;
     if (book.isRead) {
-        isRead.innerHTML = 'Read';
+        isRead.innerHTML = 
+        `<label class="toggle">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+        </label>`;
     } else {
-        isRead.innerHTML = 'Not Read';
+        isRead.innerHTML = 
+        `<label class="toggle">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>`;
     }
     remove.classList.add('remove');
     let removeBtn = document.createElement('button');
@@ -91,7 +107,11 @@ function removeBook(index) { // index = book's index in myLibrary
         title.innerHTML = 'Sample Title';
         author.innerHTML = 'Sample Author';
         pages.innerHTML = 100;
-        isRead.innerHTML = 'Read';
+        isRead.innerHTML = 
+        `<label class="toggle">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>`;
         remove.classList.add('remove');
         let removeBtn = document.createElement('button');
         removeBtn.innerHTML = 'CLICK';
