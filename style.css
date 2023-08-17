@@ -183,3 +183,7 @@ input:checked + .slider:before {
     -ms-transform: translateX(24px);
     transform: translateX(24px);
 }
+
+button {
+    cursor: pointer;
+}
